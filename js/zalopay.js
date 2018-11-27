@@ -1,102 +1,101 @@
 /*! zalopay 09-06-2017 */
 (function(root, factory) {
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = factory();
+    module.exports = factory()
   } else if (typeof define === 'function' && (define.amd || define.cmd)) {
-    define(factory);
+    define(factory)
   } else {
-    root.ZaloPay = root.ZaloPay || {};
-    factory.call(root, root.ZaloPay);
+    root.ZaloPay = root.ZaloPay || {}
+    factory.call(root, root.ZaloPay)
   }
 })(this, function(ZaloPay) {
-  
-  ZaloPay = ZaloPay || {};
-  ZaloPay.ua = navigator.userAgent;
-  ZaloPay.jsVersion = '1.0.0';
-  ZaloPay.isDebug = true;
+  ZaloPay = ZaloPay || {}
+  ZaloPay.ua = navigator.userAgent
+  ZaloPay.jsVersion = '1.0.0'
+  ZaloPay.isDebug = true
   ZaloPay.isZaloPay = (function() {
-    return ZaloPay.ua.indexOf('ZaloPayClient') > -1;
-  })();
+    return ZaloPay.ua.indexOf('ZaloPayClient') > -1
+  })()
   if (!ZaloPay.isZaloPay) {
-    writeLog('warn', 'Run in ZaloPayClient please!');
+    writeLog('warn', 'Run in ZaloPayClient please!')
   }
   ZaloPay.appVersion = (function() {
     if (ZaloPay.isZaloPay) {
-      var version = ZaloPay.ua.match(/ZaloPayClient\/(.*)/);
-      return version && version.length ? version[1] : '';
+      var version = ZaloPay.ua.match(/ZaloPayClient\/(.*)/)
+      return version && version.length ? version[1] : ''
     }
-  })();
+  })()
   ZaloPay.appInfo = {
     name: 'ZaloPay',
     isZaloPay: ZaloPay.isZaloPay,
     jsVersion: ZaloPay.jsVersion,
     appVersion: ZaloPay.appVersion
-  };
+  }
   ZaloPay.on = function(event, fn) {
     event.split(/\s+/g).forEach(function(eventName) {
-      document.addEventListener(eventName, fn, false);
-    });
-  };
+      document.addEventListener(eventName, fn, false)
+    })
+  }
   ZaloPay.call = function() {
-    var args = [].slice.call(arguments);
+    var args = [].slice.call(arguments)
     if (window.ZaloPayJSBridge && window.ZaloPayJSBridge.call) {
       var name = args[0],
         opt = args[1] || {},
-        cb = args[2];
+        cb = args[2]
       if (!isStr(name)) {
-        writeLog('error', 'ZaloPay.call', 'Request undefined function!');
-        return;
+        writeLog('error', 'ZaloPay.call', 'Request undefined function!')
+        return
       }
       if (cb === undefined && isFn(opt)) {
-        cb = opt;
-        opt = {};
+        cb = opt
+        opt = {}
       }
       if (!isObj(opt)) {
-        writeLog('error', 'ZaloPay.call', 'Request undefined options!');
-        return;
+        writeLog('error', 'ZaloPay.call', 'Request undefined options!')
+        return
       }
-      var _callback = cb;
+      var _callback = cb
       cb = function(result) {
-        result = checkError(result, name);
-        _callback && _callback(result);
-      };
+        result = checkError(result, name)
+        _callback && _callback(result)
+      }
       'writeLog' !== name &&
-        writeLog('info', 'ZaloPayJSBridge.call', name, opt, _callback);
-      window.ZaloPayJSBridge.call(name, opt, cb);
+        writeLog('info', 'ZaloPayJSBridge.call', name, opt, _callback)
+      window.ZaloPayJSBridge.call(name, opt, cb)
     } else {
-      ZaloPay._apiQueue = ZaloPay._apiQueue || [];
-      ZaloPay._apiQueue.push(args);
+      ZaloPay._apiQueue = ZaloPay._apiQueue || []
+      ZaloPay._apiQueue.push(args)
     }
-  };
+  }
   ZaloPay._ready = function(fn) {
     if (window.ZaloPayJSBridge && window.ZaloPayJSBridge.call) {
-      fn && fn();
+      fn && fn()
     } else {
-      ZaloPay.on('ZaloPayJSBridgeReady', fn);
+      ZaloPay.on('ZaloPayJSBridgeReady', fn)
     }
-  };
-  ZaloPay.ready = ZaloPay.ready || ZaloPay._ready;
+  }
+  ZaloPay.ready = ZaloPay.ready || ZaloPay._ready
 
   /**
    * ZaloPay.showLoading();
    */
   ZaloPay.showLoading = function() {
-    ZaloPay.call('showLoading');
-  };
+    ZaloPay.call('showLoading')
+  }
 
   /**
    * ZaloPay.hideLoading();
    */
   ZaloPay.hideLoading = function() {
-    ZaloPay.call('hideLoading');
-  };
+    ZaloPay.call('hideLoading')
+  }
 
   /**
    * ZaloPay.closeWindow();
    */
   ZaloPay.closeWindow = function() {
-    ZaloPay.call('closeWindow');
-  };
+    ZaloPay.call('closeWindow')
+  }
 
   /**
    * ZaloPay.showDialog({
@@ -118,8 +117,8 @@
    */
   ZaloPay.showDialog = function(opt) {
     if (!isObj(opt)) {
-      writeLog('error', 'ZaloPay.showDialog', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.showDialog', 'Received invalid object')
+      return
     }
     if (isStr(opt.title) && isStr(opt.message) && isStr(opt.button)) {
       opt = {
@@ -127,10 +126,10 @@
         title: opt.title,
         message: opt.message,
         button: opt.button
-      };
-      ZaloPay.call('showDialog', opt);
+      }
+      ZaloPay.call('showDialog', opt)
     }
-  };
+  }
 
   /**
    * ZaloPay.showToast({
@@ -139,16 +138,16 @@
    */
   ZaloPay.showToast = function(opt) {
     if (!isObj(opt)) {
-      writeLog('error', 'ZaloPay.showToast', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.showToast', 'Received invalid object')
+      return
     }
     if (isStr(opt.message)) {
       opt = {
         message: opt.message
-      };
-      ZaloPay.call('showToast', opt);
+      }
+      ZaloPay.call('showToast', opt)
     }
-  };
+  }
 
   /**
    * ZaloPay.showTooltip({
@@ -160,20 +159,20 @@
    */
   ZaloPay.showTooltip = function(opt) {
     if (!isObj(opt)) {
-      writeLog('error', 'ZaloPay.showTooltip', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.showTooltip', 'Received invalid object')
+      return
     }
-    var p = isNumber(opt.position) && opt.position > 1 ? opt.position : 0;
+    var p = isNumber(opt.position) && opt.position > 1 ? opt.position : 0
     if (isStr(opt.message) && (isStr(opt.iconName) || isStr(opt.iconLink))) {
       opt = {
         message: opt.message,
         iconName: opt.iconName,
         iconLink: opt.iconLink,
         position: p
-      };
-      ZaloPay.call('showTooltip', opt);
+      }
+      ZaloPay.call('showTooltip', opt)
     }
-  };
+  }
 
   /**
    * ZaloPay.pushView({
@@ -182,18 +181,18 @@
    */
   ZaloPay.pushView = function(opt) {
     if (!isObj(opt)) {
-      writeLog('error', 'ZaloPay.pushView', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.pushView', 'Received invalid object')
+      return
     }
     if (isStr(opt.url)) {
       opt = {
         url: opt.url
-      };
-      ZaloPay.call('pushView', opt);
-      return;
+      }
+      ZaloPay.call('pushView', opt)
+      return
     }
-    writeLog('error', 'ZaloPay.pushView', 'Received missing require param!');
-  };
+    writeLog('error', 'ZaloPay.pushView', 'Received missing require param!')
+  }
 
   /**
    * ZaloPay.share({
@@ -206,18 +205,18 @@
    */
   ZaloPay.share = function(opt) {
     if (!isObj(opt)) {
-      writeLog('error', 'ZaloPay.share', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.share', 'Received invalid object')
+      return
     }
     if (isNumber(opt.type) && isStr(opt.caption) && isStr(opt.content)) {
       opt = {
         type: opt.type,
         caption: opt.caption,
         content: opt.content
-      };
-      ZaloPay.call('share', opt);
+      }
+      ZaloPay.call('share', opt)
     }
-  };
+  }
 
   /**
    * ZaloPay.payOrder({
@@ -238,17 +237,17 @@
    */
   ZaloPay.payOrder = function(opt, cb) {
     if (!isObj(opt)) {
-      writeLog('error', 'ZaloPay.payOrder', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.payOrder', 'Received invalid object')
+      return
     }
     if (isStr(opt.zptranstoken)) {
       opt = {
         zptranstoken: opt.zptranstoken,
         appid: opt.appid
-      };
-      writeLog('info', 'ZaloPay.payOrder', 'Received zptranstoken', opt);
-      ZaloPay.call('payOrder', opt, cb);
-      return;
+      }
+      writeLog('info', 'ZaloPay.payOrder', 'Received zptranstoken', opt)
+      ZaloPay.call('payOrder', opt, cb)
+      return
     } else if (isStr(opt.mac)) {
       opt = {
         appid: opt.appid,
@@ -260,13 +259,13 @@
         item: opt.item,
         description: opt.description,
         mac: opt.mac
-      };
-      writeLog('info', 'ZaloPay.payOrder', 'Received transinfo', opt);
-      ZaloPay.call('payOrder', opt, cb);
-      return;
+      }
+      writeLog('info', 'ZaloPay.payOrder', 'Received transinfo', opt)
+      ZaloPay.call('payOrder', opt, cb)
+      return
     }
-    writeLog('error', 'ZaloPay.payOrder', 'Received missing require param!');
-  };
+    writeLog('error', 'ZaloPay.payOrder', 'Received missing require param!')
+  }
 
   /**
    * ZaloPay.transferMoney({
@@ -277,25 +276,25 @@
    */
   ZaloPay.transferMoney = function(opt, cb) {
     if (!isObj(opt)) {
-      writeLog('error', 'ZaloPay.transferMoney', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.transferMoney', 'Received invalid object')
+      return
     }
     if (isStr(opt.zpid) && isStr(opt.message) && isNumber(opt.amount)) {
       opt = {
         zpid: opt.zpid,
         amount: opt.amount,
         message: opt.message
-      };
-      writeLog('info', 'ZaloPay.transferMoney', 'Received transferMoney', opt);
-      ZaloPay.call('transferMoney', opt, cb);
-      return;
+      }
+      writeLog('info', 'ZaloPay.transferMoney', 'Received transferMoney', opt)
+      ZaloPay.call('transferMoney', opt, cb)
+      return
     }
     writeLog(
       'error',
       'ZaloPay.transferMoney',
       'Received missing require param!'
-    );
-  };
+    )
+  }
 
   /**
    * ZaloPay.promotionEvent({
@@ -311,23 +310,18 @@
    */
   ZaloPay.promotionEvent = function(opt) {
     if (!isObj(opt)) {
-      writeLog('error', 'ZaloPay.promotionEvent', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.promotionEvent', 'Received invalid object')
+      return
     }
     if (isNumber(opt.campaignId) && isNumber(opt.internalApp)) {
       opt = {
         campaignId: opt.campaignId,
         internalApp: opt.internalApp,
         alternateUrl: opt.alternateUrl
-      };
-      writeLog(
-        'info',
-        'ZaloPay.promotionEvent',
-        'Received promotionEvent',
-        opt
-      );
-      ZaloPay.call('promotionEvent', opt);
-      return;
+      }
+      writeLog('info', 'ZaloPay.promotionEvent', 'Received promotionEvent', opt)
+      ZaloPay.call('promotionEvent', opt)
+      return
     } else if (
       isNumber(opt.campaignId) &&
       isStr(opt.url) &&
@@ -338,23 +332,18 @@
         url: opt.url,
         packageId: opt.packageId,
         alternateUrl: opt.alternateUrl
-      };
-      writeLog(
-        'info',
-        'ZaloPay.promotionEvent',
-        'Received promotionEvent',
-        opt
-      );
-      ZaloPay.call('promotionEvent', opt);
-      return;
+      }
+      writeLog('info', 'ZaloPay.promotionEvent', 'Received promotionEvent', opt)
+      ZaloPay.call('promotionEvent', opt)
+      return
     }
     writeLog(
       'error',
       'ZaloPay.transferMoney',
       'Received missing require param!',
       opt
-    );
-  };
+    )
+  }
 
   /**
    * ZaloPay.setProperty({
@@ -365,17 +354,17 @@
    */
   ZaloPay.setProperty = function(opt, cb) {
     if (!isObj(opt)) {
-      writeLog('error', 'ZaloPay.setProperty', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.setProperty', 'Received invalid object')
+      return
     }
-    writeLog('info', 'ZaloPay.setProperty', 'Received navigator', opt);
+    writeLog('info', 'ZaloPay.setProperty', 'Received navigator', opt)
     if (isFn(cb)) {
-      ZaloPay.call('setProperty', opt, cb);
+      ZaloPay.call('setProperty', opt, cb)
     } else {
-      ZaloPay.call('setProperty', opt);
+      ZaloPay.call('setProperty', opt)
     }
-    return;
-  };
+    return
+  }
 
   /**
    * ZaloPay.setToolbarActions([{
@@ -389,10 +378,10 @@
    */
   ZaloPay.setToolbarActions = function(opt, cb) {
     if (!isArr(opt) || opt.length < 1 || !isFn(cb)) {
-      writeLog('error', 'ZaloPay.setToolbarActions', 'Received invalid object');
-      return;
+      writeLog('error', 'ZaloPay.setToolbarActions', 'Received invalid object')
+      return
     }
-    var options = [];
+    var options = []
     opt.forEach(function(v, k) {
       if (isStr(v.iconId)) {
         if (isStr(v.iconLink)) {
@@ -402,7 +391,7 @@
             iconLink: v.iconLink,
             iconName: '',
             iconColor: ''
-          });
+          })
         } else {
           if (isStr(v.iconName)) {
             if (isStr(v.iconColor)) {
@@ -412,7 +401,7 @@
                 iconLink: '',
                 iconName: v.iconName,
                 iconColor: v.iconColor
-              });
+              })
             } else {
               options.push({
                 iconId: v.iconId,
@@ -420,24 +409,24 @@
                 iconLink: '',
                 iconName: v.iconName,
                 iconColor: ''
-              });
+              })
             }
           }
         }
       }
-    });
+    })
     if (options.length > 0) {
-      ZaloPay.call('setToolbarActions', { data: options });
-      document.addEventListener(cb.name, cb, false);
-      return;
+      ZaloPay.call('setToolbarActions', { data: options })
+      document.addEventListener(cb.name, cb, false)
+      return
     }
     writeLog(
       'error',
       'ZaloPay.setToolbarActions',
       'Received missing require param!',
       opt
-    );
-  };
+    )
+  }
 
   /**
    * ZaloPay.getUserInfo(appid, cb);
@@ -448,44 +437,48 @@
         'error',
         'ZaloPay.getUserInfo',
         'Received invalid function callback'
-      );
-      return;
+      )
+      return
     }
     writeLog(
       'info',
       'ZaloPay.getUserInfo',
       'Received UserInfo in function callback'
-    );
-    ZaloPay.call('getUserInfo', { appid: appid }, cb);
-  };
+    )
+    ZaloPay.call('getUserInfo', { appid: appid }, cb)
+  }
 
   ZaloPay.requestAnimationFrame = function(cb) {
     var raf =
       window.requestAnimationFrame ||
       window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame;
+      window.mozRequestAnimationFrame
     if (raf) {
-      return raf(cb);
+      return raf(cb)
     } else {
-      writeLog('error', 'ZaloPay.requestAnimationFrame', 'Not supported!');
+      writeLog('error', 'ZaloPay.requestAnimationFrame', 'Not supported!')
     }
-  };
+  }
 
   ZaloPay._ready(function() {
-    writeLog('info', 'ZaloPayJS Ready!');
-    var apiQueue = ZaloPay._apiQueue || [];
+    writeLog('info', 'ZaloPayJS Ready!')
+    var apiQueue = ZaloPay._apiQueue || []
 
     function next() {
       ZaloPay.requestAnimationFrame(function() {
-        var args = apiQueue.shift();
-        ZaloPay.call.apply(null, args);
-        if (apiQueue.length) next();
-      });
+        var args = apiQueue.shift()
+        ZaloPay.call.apply(null, args)
+        if (apiQueue.length) next()
+      })
     }
-    !!apiQueue.length && next();
-  });
+    !!apiQueue.length && next()
+  })
 
-  [
+  ZaloPay.scanARCampaign = function() {
+    alert('hello')
+    ZaloPay.call('scanARCampaign')
+  }
+  ;[
     'appinfo',
     'showLoading',
     'hideLoading',
@@ -494,69 +487,69 @@
     'pushView'
   ].forEach(function(methodName) {
     ZaloPay[methodName] = function() {
-      var args = [].slice.call(arguments);
-      ZaloPay.call.apply(null, [methodName].concat(args));
-    };
-  });
+      var args = [].slice.call(arguments)
+      ZaloPay.call.apply(null, [methodName].concat(args))
+    }
+  })
 
   function isAndroid() {
-    return /android/i.test(ZaloPay.ua);
+    return /android/i.test(ZaloPay.ua)
   }
 
   function isIOS() {
-    return /iphone|ipad|ipod/i.test(ZaloPay.ua);
+    return /iphone|ipad|ipod/i.test(ZaloPay.ua)
   }
 
   function isArr(fn) {
-    return 'array' === type(fn);
+    return 'array' === type(fn)
   }
 
   function isFn(fn) {
-    return 'function' === type(fn);
+    return 'function' === type(fn)
   }
 
   function isStr(str) {
-    return 'string' === type(str);
+    return 'string' === type(str)
   }
 
   function isObj(o) {
-    return 'object' === type(o);
+    return 'object' === type(o)
   }
 
   function isNumber(num) {
-    return 'number' === type(num);
+    return 'number' === type(num)
   }
 
   function type(obj) {
     return Object.prototype.toString
       .call(obj)
       .replace(/\[object (\w+)\]/, '$1')
-      .toLowerCase();
+      .toLowerCase()
   }
 
   function writeLog() {
-    var time = +new Date();
-    var arg = [].slice.call(arguments);
-    var type = arg[0].toLowerCase().trim();
+    var time = +new Date()
+    var arg = [].slice.call(arguments)
+    var type = arg[0].toLowerCase().trim()
     switch (type) {
       case 'error':
-        arg.splice(0, 1);
+        arg.splice(0, 1)
         arg.length === 1
           ? console.error(time, arg[0])
-          : console.error(time, arg);
-        break;
+          : console.error(time, arg)
+        break
       case 'warn':
-        arg.splice(0, 1);
-        arg.length === 1 ? console.warn(time, arg[0]) : console.warn(time, arg);
-        break;
+        arg.splice(0, 1)
+        arg.length === 1 ? console.warn(time, arg[0]) : console.warn(time, arg)
+        break
       case 'info':
-        arg.splice(0, 1);
-        arg.length === 1 ? console.log(time, arg[0]) : console.log(time, arg);
-        break;
+        arg.splice(0, 1)
+        arg.length === 1 ? console.log(time, arg[0]) : console.log(time, arg)
+        break
       default:
-        type = 'info';
-        arg.length === 1 ? console.log(time, arg[0]) : console.log(time, arg);
-        break;
+        type = 'info'
+        arg.length === 1 ? console.log(time, arg[0]) : console.log(time, arg)
+        break
     }
     if (
       ZaloPay.isDebug &&
@@ -568,14 +561,14 @@
         type: type,
         time: time,
         data: JSON.stringify(arg)
-      };
-      ZaloPay.call('writeLog', opt);
+      }
+      ZaloPay.call('writeLog', opt)
     }
   }
 
   function checkError(result, name) {
-    result = result || {};
-    result.errorCode = result.error || 0;
+    result = result || {}
+    result.errorCode = result.error || 0
     if (result.error !== 1) {
       writeLog(
         'error',
@@ -585,7 +578,7 @@
           '], message[' +
           result.errorMessage +
           ']'
-      );
+      )
     } else {
       writeLog(
         'info',
@@ -595,21 +588,21 @@
           '], message[' +
           result.errorMessage +
           ']'
-      );
+      )
     }
-    return result;
+    return result
   }
 
   function compareVersion(targetVersion) {
-    var appVersion = ZaloPay.appVersion.split('.');
-    targetVersion = targetVersion.split('.');
+    var appVersion = ZaloPay.appVersion.split('.')
+    targetVersion = targetVersion.split('.')
     for (var i = 0, n1, n2; i < appVersion.length; i++) {
-      n1 = parseInt(targetVersion[i], 10) || 0;
-      n2 = parseInt(appVersion[i], 10) || 0;
-      if (n1 > n2) return -1;
-      if (n1 < n2) return 1;
+      n1 = parseInt(targetVersion[i], 10) || 0
+      n2 = parseInt(appVersion[i], 10) || 0
+      if (n1 > n2) return -1
+      if (n1 < n2) return 1
     }
-    return 0;
+    return 0
   }
-  return ZaloPay;
-});
+  return ZaloPay
+})
