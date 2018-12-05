@@ -17,7 +17,7 @@
   "static/js/5.24e308a2.chunk.js.map": "/topaz/static/js/5.24e308a2.chunk.js.map",
   "runtime~main.js": "/topaz/static/js/runtime~main.5b827972.js",
   "runtime~main.js.map": "/topaz/static/js/runtime~main.5b827972.js.map",
-  "static/media/index.scss": "/topaz/static/media/SFUIText-Regular.1779b405.ttf",
+  "static/media/index.scss": "/topaz/static/media/SFUIText-Light.6926734f.ttf",
   "static/media/guide-ar-1@3x.png": "/topaz/static/media/guide-ar-1@3x.f3e6e3e7.png",
   "static/media/guide-ar-2@3x.png": "/topaz/static/media/guide-ar-2@3x.de1dcb0d.png",
   "static/media/guide-ar-3@3x.png": "/topaz/static/media/guide-ar-3@3x.ace97800.png",
@@ -27,9 +27,9 @@
   "static/media/redenvelop-list@3x.png": "/topaz/static/media/redenvelop-list@3x.fa22c08e.png",
   "static/media/piggy-5@3x.png": "/topaz/static/media/piggy-5@3x.e3206dfc.png",
   "static/media/success-beat-pig@3x.png": "/topaz/static/media/success-beat-pig@3x.ace97800.png",
-  "static/css/2.8be0b795.chunk.css.map": "/topaz/static/css/2.8be0b795.chunk.css.map",
-  "static/css/1.ce4860e5.chunk.css.map": "/topaz/static/css/1.ce4860e5.chunk.css.map",
   "static/css/main.41bf7349.chunk.css.map": "/topaz/static/css/main.41bf7349.chunk.css.map",
+  "static/css/1.ce4860e5.chunk.css.map": "/topaz/static/css/1.ce4860e5.chunk.css.map",
+  "static/css/2.8be0b795.chunk.css.map": "/topaz/static/css/2.8be0b795.chunk.css.map",
   "static/css/4.a26e932c.chunk.css.map": "/topaz/static/css/4.a26e932c.chunk.css.map",
   "index.html": "/topaz/index.html"
 }
