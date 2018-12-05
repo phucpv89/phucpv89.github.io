@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{305:function(e,t,n){"use strict";n.r(t);var a=n(6),c=n(7),r=n(9),u=n(8),o=n(10),i=n(0),l=n.n(i),p=n(306),s=function(e){function t(){return Object(a.a)(this,t),Object(r.a)(this,Object(u.a)(t).apply(this,arguments))}return Object(o.a)(t,e),Object(c.a)(t,[{key:"render",value:function(){return l.a.createElement("div",null,l.a.createElement("h2",null,"Home"),l.a.createElement(p.a,{to:"/guide"},"Home"))}}]),t}(l.a.PureComponent);t.default=s}}]);
-//# sourceMappingURL=3.7cf8d85f.chunk.js.map
