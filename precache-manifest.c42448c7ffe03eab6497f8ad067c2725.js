@@ -1,39 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "4ed2cabf5d6fb426ac89",
-    "url": "/static/css/main.4a219004.chunk.css"
+    "revision": "b5452763a27611a644f4",
+    "url": "/static/css/main.7f6dc0fb.chunk.css"
   },
   {
-    "revision": "4ed2cabf5d6fb426ac89",
-    "url": "/static/js/main.4ed2cabf.chunk.js"
+    "revision": "b5452763a27611a644f4",
+    "url": "/static/js/main.b5452763.chunk.js"
   },
   {
-    "revision": "a31caf016d62fafcc230",
-    "url": "/static/js/1.a31caf01.chunk.js"
+    "revision": "f8415a39f8adeae29489",
+    "url": "/static/js/1.f8415a39.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
     "url": "/static/js/runtime~main.229c360f.js"
-  },
-  {
-    "revision": "ce2a4f411fa119c9a4d79cee3b10b71b",
-    "url": "/static/media/item_bigmac@3x.ce2a4f41.png"
-  },
-  {
-    "revision": "6504ee97d5d55675b43d26a3f805e7ff",
-    "url": "/static/media/item_chicken@3x.6504ee97.png"
-  },
-  {
-    "revision": "121d38631d7bf138a6fc162a1e29c388",
-    "url": "/static/media/item_frenchfries@3x.121d3863.png"
-  },
-  {
-    "revision": "d6b0cfd337b3b391e51834ca1e6c42f9",
-    "url": "/static/media/item_happymeal@3x.d6b0cfd3.png"
-  },
-  {
-    "revision": "0a4304c37e39b4a2a7881c895a886a9a",
-    "url": "/static/media/item_rice@3x.0a4304c3.png"
   },
   {
     "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
@@ -54,6 +34,26 @@ self.__precacheManifest = [
   {
     "revision": "cc558bacaed131e8d545aabc30b5cd21",
     "url": "/static/media/bg_finish_final@3x.cc558bac.png"
+  },
+  {
+    "revision": "ce2a4f411fa119c9a4d79cee3b10b71b",
+    "url": "/static/media/item_bigmac@3x.ce2a4f41.png"
+  },
+  {
+    "revision": "6504ee97d5d55675b43d26a3f805e7ff",
+    "url": "/static/media/item_chicken@3x.6504ee97.png"
+  },
+  {
+    "revision": "121d38631d7bf138a6fc162a1e29c388",
+    "url": "/static/media/item_frenchfries@3x.121d3863.png"
+  },
+  {
+    "revision": "d6b0cfd337b3b391e51834ca1e6c42f9",
+    "url": "/static/media/item_happymeal@3x.d6b0cfd3.png"
+  },
+  {
+    "revision": "0a4304c37e39b4a2a7881c895a886a9a",
+    "url": "/static/media/item_rice@3x.0a4304c3.png"
   },
   {
     "revision": "600fc753bfea26a17e3d2295be05ba64",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/static/media/banner@3x.c2d62170.png"
   },
   {
-    "revision": "d4c077febe3e4fe3c0d779ff35eb2129",
+    "revision": "588766babfdd500ab4073e88e86d6225",
     "url": "/index.html"
   }
 ];
