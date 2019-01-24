@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "054aa24b0ebcf3112fad",
-    "url": "/static/css/main.b2cc8084.chunk.css"
+    "revision": "2e436cb7f4f532eab133",
+    "url": "/static/css/main.bdbad763.chunk.css"
   },
   {
-    "revision": "054aa24b0ebcf3112fad",
-    "url": "/static/js/main.054aa24b.chunk.js"
+    "revision": "2e436cb7f4f532eab133",
+    "url": "/static/js/main.2e436cb7.chunk.js"
   },
   {
-    "revision": "f8415a39f8adeae29489",
-    "url": "/static/js/1.f8415a39.chunk.js"
+    "revision": "efc57046c3a6e5eb0396",
+    "url": "/static/js/1.efc57046.chunk.js"
   },
   {
     "revision": "229c360febb4351a89df",
@@ -20,20 +20,32 @@ self.__precacheManifest = [
     "url": "/static/media/logo.5d5d9eef.svg"
   },
   {
-    "revision": "bd4eced986a29f4383601ab40e107dd7",
-    "url": "/static/media/background_home@3x.bd4eced9.jpg"
+    "revision": "1c6116605aa8578828a6ddc8c5154212",
+    "url": "/static/media/background_home@3x.1c611660.jpg"
   },
   {
     "revision": "bbdb0186714683643490e483a3318d24",
     "url": "/static/media/firewall@3x.bbdb0186.png"
   },
   {
-    "revision": "d33bb255d02d11c2346941f678ba0edb",
-    "url": "/static/media/background_playgame@3x.d33bb255.jpg"
+    "revision": "f1c0bfd142b1f97e27b9d621766f7bc9",
+    "url": "/static/media/background_playgame@3x.f1c0bfd1.jpg"
   },
   {
     "revision": "cc558bacaed131e8d545aabc30b5cd21",
     "url": "/static/media/bg_finish_final@3x.cc558bac.png"
+  },
+  {
+    "revision": "3d27ce9416bda062d4c8585c9bf8fbd3",
+    "url": "/static/media/passport-1@3x.3d27ce94.jpg"
+  },
+  {
+    "revision": "9d26f3070586616212eee4c3b8c6ecc0",
+    "url": "/static/media/radio@3x.9d26f307.jpg"
+  },
+  {
+    "revision": "ea893d73c3a806134f8e591236d08373",
+    "url": "/static/media/coke-mug@3x.ea893d73.jpg"
   },
   {
     "revision": "ce2a4f411fa119c9a4d79cee3b10b71b",
@@ -76,11 +88,31 @@ self.__precacheManifest = [
     "url": "/static/media/item_rice_large@3x.69982061.png"
   },
   {
-    "revision": "c2d62170c68942bdac3a24107be82805",
-    "url": "/static/media/banner@3x.c2d62170.png"
+    "revision": "beb8d530432a5a2603de0e6ab3a9e4ca",
+    "url": "/static/media/voucher_bigmac_10@3x.beb8d530.jpg"
   },
   {
-    "revision": "0853dc5aa29ba709c8297d9fcc50c4d2",
+    "revision": "e9b736a16939bec0595d0647b5377f91",
+    "url": "/static/media/voucher_matchadaxay@3x.e9b736a1.jpg"
+  },
+  {
+    "revision": "48231881af3c832fb6f29ecba4b7302c",
+    "url": "/static/media/voucher_matchalatteda@3x.48231881.jpg"
+  },
+  {
+    "revision": "49f29316c6ddb94327f3e69312ed9a9a",
+    "url": "/static/media/voucher_matchalattenong@3x.49f29316.jpg"
+  },
+  {
+    "revision": "48845deb818b6c05b2c609ef4447321f",
+    "url": "/static/media/voucher_bigmac_20@3x.48845deb.jpg"
+  },
+  {
+    "revision": "538cf8667ec20c77c093c0d29b494dbe",
+    "url": "/static/media/passport-2@3x.538cf866.jpg"
+  },
+  {
+    "revision": "efa94623209545e4573af4914d03b838",
     "url": "/index.html"
   }
 ];
