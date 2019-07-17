@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/colossus/web/v1/h5payment/static/css/main.ea5f5a25.chunk.css",
-    "main.js": "/colossus/web/v1/h5payment/static/js/main.282fd298.chunk.js",
-    "main.js.map": "/colossus/web/v1/h5payment/static/js/main.282fd298.chunk.js.map",
+    "main.js": "/colossus/web/v1/h5payment/static/js/main.54822c0e.chunk.js",
+    "main.js.map": "/colossus/web/v1/h5payment/static/js/main.54822c0e.chunk.js.map",
     "runtime~main.js": "/colossus/web/v1/h5payment/static/js/runtime~main.9e6db84b.js",
     "runtime~main.js.map": "/colossus/web/v1/h5payment/static/js/runtime~main.9e6db84b.js.map",
     "static/js/2.03ea5b2c.chunk.js": "/colossus/web/v1/h5payment/static/js/2.03ea5b2c.chunk.js",
     "static/js/2.03ea5b2c.chunk.js.map": "/colossus/web/v1/h5payment/static/js/2.03ea5b2c.chunk.js.map",
     "index.html": "/colossus/web/v1/h5payment/index.html",
-    "precache-manifest.737926f52c03325375bd2996efe8f206.js": "/colossus/web/v1/h5payment/precache-manifest.737926f52c03325375bd2996efe8f206.js",
+    "precache-manifest.505cd585060d70b6aeb0c0fbda8ca62f.js": "/colossus/web/v1/h5payment/precache-manifest.505cd585060d70b6aeb0c0fbda8ca62f.js",
     "service-worker.js": "/colossus/web/v1/h5payment/service-worker.js",
     "static/css/main.ea5f5a25.chunk.css.map": "/colossus/web/v1/h5payment/static/css/main.ea5f5a25.chunk.css.map",
     "static/media/index.scss": "/colossus/web/v1/h5payment/static/media/SF-Pro-Display-Regular.aaeac71d.otf",
