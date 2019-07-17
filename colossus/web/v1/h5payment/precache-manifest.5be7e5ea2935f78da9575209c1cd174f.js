@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8e87785b0ca5fa60751ee8ea86f1956b",
+    "revision": "294eeca1afa0818121461b6173bb1cc0",
     "url": "/colossus/web/v1/h5payment/index.html"
   },
   {
-    "revision": "932caa5d9e67cfcb6342",
+    "revision": "9dfe3af09ef7b43ceea7",
     "url": "/colossus/web/v1/h5payment/static/css/main.ea5f5a25.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/colossus/web/v1/h5payment/static/js/2.03ea5b2c.chunk.js"
   },
   {
-    "revision": "932caa5d9e67cfcb6342",
-    "url": "/colossus/web/v1/h5payment/static/js/main.edda1712.chunk.js"
+    "revision": "9dfe3af09ef7b43ceea7",
+    "url": "/colossus/web/v1/h5payment/static/js/main.0cd9a0f7.chunk.js"
   },
   {
     "revision": "68bef2652b737393eb09",
