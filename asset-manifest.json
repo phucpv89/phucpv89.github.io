@@ -1,16 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.2cce8147.chunk.css",
-    "main.js": "/static/js/main.28647029.chunk.js",
-    "main.js.map": "/static/js/main.28647029.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.b41502e9.chunk.js": "/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/static/js/2.b41502e9.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.054774adbe886ee6e3c29227ef1745b5.js": "/precache-manifest.054774adbe886ee6e3c29227ef1745b5.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/colossus/web/v1/h5payment/static/css/main.ea5f5a25.chunk.css",
+    "main.js": "/colossus/web/v1/h5payment/static/js/main.6d38eefa.chunk.js",
+    "main.js.map": "/colossus/web/v1/h5payment/static/js/main.6d38eefa.chunk.js.map",
+    "runtime~main.js": "/colossus/web/v1/h5payment/static/js/runtime~main.9e6db84b.js",
+    "runtime~main.js.map": "/colossus/web/v1/h5payment/static/js/runtime~main.9e6db84b.js.map",
+    "static/js/2.e6672e2b.chunk.js": "/colossus/web/v1/h5payment/static/js/2.e6672e2b.chunk.js",
+    "static/js/2.e6672e2b.chunk.js.map": "/colossus/web/v1/h5payment/static/js/2.e6672e2b.chunk.js.map",
+    "index.html": "/colossus/web/v1/h5payment/index.html",
+    "precache-manifest.191dcc1ac1307356f13808cde80af010.js": "/colossus/web/v1/h5payment/precache-manifest.191dcc1ac1307356f13808cde80af010.js",
+    "service-worker.js": "/colossus/web/v1/h5payment/service-worker.js",
+    "static/css/main.ea5f5a25.chunk.css.map": "/colossus/web/v1/h5payment/static/css/main.ea5f5a25.chunk.css.map",
+    "static/media/index.scss": "/colossus/web/v1/h5payment/static/media/SF-Pro-Display-Regular.aaeac71d.otf",
+    "static/media/art-change-pass.svg": "/colossus/web/v1/h5payment/static/media/art-change-pass.3c6187de.svg",
+    "static/media/art-check-data.svg": "/colossus/web/v1/h5payment/static/media/art-check-data.2124c89d.svg",
+    "static/media/art-error.svg": "/colossus/web/v1/h5payment/static/media/art-error.05d45857.svg",
+    "static/media/download-applestore.svg": "/colossus/web/v1/h5payment/static/media/download-applestore.50b80642.svg",
+    "static/media/download-playstore.svg": "/colossus/web/v1/h5payment/static/media/download-playstore.42a559cd.svg",
+    "static/media/ic-hide-popup.svg": "/colossus/web/v1/h5payment/static/media/ic-hide-popup.7359c0c1.svg",
+    "static/media/icon-zalopay.svg": "/colossus/web/v1/h5payment/static/media/icon-zalopay.49c865b7.svg",
+    "static/media/result-processing.svg": "/colossus/web/v1/h5payment/static/media/result-processing.822d0984.svg",
+    "static/media/result-retry.svg": "/colossus/web/v1/h5payment/static/media/result-retry.6d9a917f.svg",
+    "static/media/result-success.svg": "/colossus/web/v1/h5payment/static/media/result-success.b22b0e38.svg"
   }
 }
