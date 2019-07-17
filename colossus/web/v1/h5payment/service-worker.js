@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/colossus/web/v1/h5payment/precache-manifest.d5a6adc4eaea0f6b0bbe705e02d36550.js"
+  "/colossus/web/v1/h5payment/precache-manifest.4250d6d57d223cb30ef6e1d810e37960.js"
 );
 
 self.addEventListener('message', (event) => {
