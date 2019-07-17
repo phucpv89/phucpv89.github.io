@@ -1,10 +1,4 @@
-IfModule mod_rewrite.c>
- RewriteEngine on
- RewriteBase /colossus/web/v1/h5payment/
- RewriteCond %{REQUEST_FILENAME} -s [OR]
- #Rewrite Conditions 
- RewriteCond %{REQUEST_FILENAME} -l [OR]
- RewriteCond %{REQUEST_FILENAME} -d
- RewriteRule ^.*$ – [NC,L]
- RewriteRule ^(.*) /colossus/web/v1/h5payment/index.html [NC,L]
- </IfModule>
+Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]

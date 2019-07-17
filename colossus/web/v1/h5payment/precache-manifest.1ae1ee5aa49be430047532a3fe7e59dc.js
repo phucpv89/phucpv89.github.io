@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "945a59c171bcdbeb32aac4c73a4f98c0",
+    "revision": "1b69ec1b4cc6c2d27f37e38c7491697e",
     "url": "/colossus/web/v1/h5payment/index.html"
   },
   {
-    "revision": "761dd49c40ed9fa9ad59",
-    "url": "/colossus/web/v1/h5payment/static/css/main.ea5f5a25.chunk.css"
+    "revision": "33fb3e0a2e5d33561519",
+    "url": "/colossus/web/v1/h5payment/static/css/main.6275b7a2.chunk.css"
   },
   {
-    "revision": "43fb9c562d4b92bbe944",
-    "url": "/colossus/web/v1/h5payment/static/js/2.03ea5b2c.chunk.js"
+    "revision": "f3fc5e041233f31b527c",
+    "url": "/colossus/web/v1/h5payment/static/js/2.fd3ff888.chunk.js"
   },
   {
-    "revision": "761dd49c40ed9fa9ad59",
-    "url": "/colossus/web/v1/h5payment/static/js/main.dcafb90f.chunk.js"
+    "revision": "33fb3e0a2e5d33561519",
+    "url": "/colossus/web/v1/h5payment/static/js/main.749b1018.chunk.js"
   },
   {
     "revision": "68bef2652b737393eb09",
